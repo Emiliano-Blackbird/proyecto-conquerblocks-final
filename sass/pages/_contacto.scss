@@ -84,8 +84,7 @@
                     transition: background-color 0.3s;
 
                     &:hover {
-                        background-color: darken($dark-blue, 10%);
-                    }
+                        background-color: color.adjust($dark-blue, $lightness: -10%);                    }
                 }
             }
         }
