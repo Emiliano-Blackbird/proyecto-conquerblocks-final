@@ -10,8 +10,9 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "copy-dist-to-docs": "rm -rf docs && cp -r dist docs",
-    "deploy": "vite build && gh-pages -d dist"
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
