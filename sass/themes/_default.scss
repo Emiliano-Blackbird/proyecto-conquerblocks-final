@@ -1,0 +1,18 @@
+@use '../abstracts/abstracts' as *;
+
+html * {
+    font-family: $font-family;
+}
+ 
+body {
+    overflow-x: hidden;
+    font-size: 14px;
+    
+    @include breakpoint(tablet) {
+        font-size: 16px;
+    }
+
+    @include breakpoint(tablethorizontal) {
+        font-size: 18px;
+    }
+} 

@@ -1,0 +1,64 @@
+@use '../abstracts/abstracts' as *;
+
+.page-blog {
+
+    .main {
+        &__intro {
+            margin-bottom: $mb-1;
+        }
+
+        &__articles {
+            .article-card{
+                margin-bottom: $mb-2;
+                padding: 16px;
+                background-color: $light-white;
+                border-radius: $br-1;
+            }
+        }
+
+        &__video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Relación 16:9 (9/16 = 0.5625) */
+            height: 0;
+            overflow: hidden;
+            border-radius: $br-1;
+          }
+          
+        &__video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none; /* Opcional: elimina borde por defecto */
+        }
+
+        .course-video {
+            max-width: 560px;
+        }
+    }
+}
+
+// Media query for tablet
+@include breakpoint(tablet) {
+    .page-blog {
+
+        .main {
+    
+            &__articles {
+                .article-card{
+                    margin-bottom: $mb-2;
+                    padding: 16px;
+                    background-color: $light-white;
+                    
+                    &__title {
+                        font-size: 28px;
+                        line-height: 36px;
+                        letter-spacing: 0;
+                    }
+                }
+            }
+        }
+    }
+}

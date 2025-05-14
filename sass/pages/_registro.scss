@@ -1,0 +1,117 @@
+@use '../abstracts/abstracts' as *;
+
+.page-registro {
+    .title {
+        text-align: center;
+    }
+
+    .contact-form {  
+        width: 100%;
+    }
+    .form {
+        font-weight: 600;
+        color: $dark-blue;
+        box-sizing: border-box;
+
+        &__intro {
+            text-align: center;
+        }
+
+        &__fieldset {
+            padding: 20px;
+            background-color: $light-grey;
+            border: none;
+            border-radius: $br-1;
+        }
+
+        &__legend {
+            font-size: 18px;
+        }
+
+        &__group {
+            margin-bottom: $mb-2;
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__label{
+            margin-bottom: 5px;
+        }
+
+        &__input {
+            border: 0;
+            border-bottom: 1px solid $dark-grey;
+            background-color: $light-grey;
+            color: $grey;
+            font-weight: 600;
+        }
+
+        &__file {
+            width: 100%; /* Ocupa todo el ancho disponible */
+            //max-width: 100%; /* Previene que se salga del contenedor */
+            // overflow: hidden; /* Oculta el contenido que sobresalga */
+            //text-overflow: ellipsis; /* Añade puntos suspensivos si el texto es muy largo */
+            //white-space: nowrap; /* Evita que el texto se divida en múltiples líneas */
+        }
+
+        &__textarea {
+            border: 0;
+            border-bottom: 1px solid $dark-grey;
+            background-color: $light-grey;
+            color: $dark-grey;
+            font-weight: 600;
+        }
+
+        &__button {
+
+            &--container {
+                display: flex;
+                justify-content: space-around;
+            }
+
+            &--submit, &--reset {
+                @include button-submit-reset();
+            }
+        }
+    }
+}
+
+// Media query for tablet
+@include breakpoint(tablet) {
+    .page-registro {
+        .form {
+            padding-left: 130px;
+            padding-right: 130px;
+        }
+    }
+}
+
+// Media query for tablet horizontal
+@include breakpoint(tablethorizontal) {
+    .page-registro {
+        .form {
+            padding-left: 220px;
+            padding-right: 220px;
+        }
+    }
+}
+
+// Media query for desktop
+@include breakpoint(desktop) {
+    .page-registro {
+        .form {
+            padding-left: 330px;
+            padding-right: 330px;
+        }
+    }
+}
+
+// Media query for desktop
+@include breakpoint(desktopxl) {
+    .page-registro {
+        .form {
+            padding-left: 360px;
+            padding-right: 360px;
+        }
+    }
+}

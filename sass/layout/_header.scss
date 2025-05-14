@@ -1,0 +1,169 @@
+@use '../abstracts/abstracts' as *;
+@use 'sass:color';
+
+// Colores base
+$blue-dark: #0D1B2A;
+$blue: #1B263B;
+$yellow: #FFC300;
+$light-gray: #F0F0F0;
+$white: #FFFFFF;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: linear-gradient(to right, $blue-dark, $blue);
+  padding: 35px 10%;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 80px;
+
+  &__logo {
+    display: flex;
+    align-items: center;
+
+    img {
+      width: auto;
+      height: 100%;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: scale(1.1);
+        box-shadow: 0 0 10px rgba($yellow, 0.4);
+      }
+    }
+  }
+
+  &__toggle {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    color: $white;
+    border: none;
+    cursor: pointer;
+
+    @media (max-width: 768px) {
+      display: block;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+
+      li {
+        a {
+          display: inline-block;
+          padding: 0.7rem 1.6rem;
+          border-radius: 999px;
+          text-decoration: none;
+          font-weight: 600;
+          font-size: 1.05rem;
+          font-family: 'Poppins', sans-serif;
+          text-transform: capitalize;
+          color: $light-gray;
+          transition: all 0.3s ease;
+          min-width: max-content;
+
+          &:hover {
+            background-color: rgba($yellow, 0.15);
+            box-shadow: 0 0 8px rgba($yellow, 0.3);
+            transform: scale(1.05);
+          }
+
+          &.active {
+            color: $white;
+            background-color: $yellow;
+            font-weight: 700;
+            border-bottom: 4px solid $yellow;
+            border-radius: 999px;
+
+            &:hover {
+              background-color: color.scale($yellow, $lightness: 5%);
+              box-shadow: 0 0 10px rgba($yellow, 0.4);
+            }
+          }
+        }
+      }
+    }
+
+    // Mobile: vertical nav
+    @media (max-width: 768px) {
+      display: none;
+      width: 100%;
+
+      &.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+      }
+
+      ul {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        gap: 1.2rem;
+
+        li a {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+// Breakpoints para ajustar paddings y separación de menú
+
+@include breakpoint(tablet) {
+  .header {
+    padding: 25px 5%;
+
+    &__nav ul {
+      gap: 20px;
+    }
+  }
+}
+
+@include breakpoint(tablethorizontal) {
+  .header {
+    padding: 30px 8%;
+
+    &__nav ul {
+      gap: 24px;
+    }
+  }
+}
+
+@include breakpoint(desktop) {
+  .header {
+    padding: 35px 10%;
+
+    &__nav ul {
+      gap: 30px;
+    }
+  }
+}
+
+@include breakpoint(desktopxl) {
+  .header {
+    padding: 40px 12%;
+
+    &__nav ul {
+      gap: 35px;
+    }
+  }
+}
