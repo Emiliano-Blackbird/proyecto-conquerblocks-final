@@ -4,6 +4,8 @@ import { resolve } from 'path';
 export default defineConfig({
   base: "/proyecto-conquerblocks-final/",
   build: {
+    outDir: "dist",
+    cssCodeSplit: true,
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
