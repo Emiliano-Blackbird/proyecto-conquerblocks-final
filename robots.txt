@@ -1,5 +1,12 @@
-# www.robotstxt.org/
+# robots.txt para PROYECTO-CONQUERBLOCKS-FINAL
 
-# Allow crawling of all content
+# Aplica a todos los bots
 User-agent: *
-Disallow:
+
+# Permitir indexación completa
+Allow: /
+
+# Bloquear carpetas que no son públicas
+Disallow: /node_modules/
+Disallow: /sass/
+Disallow: /dist/
